@@ -3,7 +3,6 @@ import { createPinia } from "pinia"
 
 import "./assets/main.css"
 
-
 import App from "./App.vue"
 import router from "./router"
 
@@ -13,8 +12,8 @@ app.use(createPinia())
 app.use(router)
 
 // PrimeVue stuffs
-import 'primevue/resources/themes/mdc-light-indigo/theme.css'
-import 'primeicons/primeicons.css'
+import "primevue/resources/themes/mdc-light-indigo/theme.css"
+import "primeicons/primeicons.css"
 
 import PrimeVue from "primevue/config"
 app.use(PrimeVue)
