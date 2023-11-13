@@ -1,15 +1,3 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <p>This website is called Kosuzu, a replay summary analysis online service. And Kosuzu is a cute character from <a href="https://en.wikipedia.org/wiki/Touhou_Project" class="text-blue-600 dark:text-blue-500 hover:underline">Touhou Project.</a></p>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
