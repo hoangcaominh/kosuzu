@@ -4,16 +4,16 @@ import { RouterLink, RouterView } from "vue-router"
 
 <template>
   <Toast />
-  <div class="container mx-auto space-y-6">
+  <div class="main">
     <header>
       <nav class="grid grid-cols-2 gap-1">
         <RouterLink
-          class="p-5 text-2xl text-center border rounded-md border-solid border-gray-500 hover:bg-gray-100 active:bg-gray-300"
+          class="route"
           to="/"
           >Home</RouterLink
         >
         <RouterLink
-          class="p-5 text-2xl text-center border rounded-md border-solid border-gray-500 hover:bg-gray-100 active:bg-gray-300"
+          class="route"
           to="/about"
           >About</RouterLink
         >
@@ -24,4 +24,12 @@ import { RouterLink, RouterView } from "vue-router"
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main {
+  @apply container mx-auto space-y-8;
+}
+
+.route {
+  @apply p-5 text-2xl text-center border rounded-md border-solid border-gray-500 hover:bg-gray-100 active:bg-gray-300;
+}
+</style>

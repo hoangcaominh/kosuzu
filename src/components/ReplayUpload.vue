@@ -34,7 +34,7 @@ const replayUploader = (event: FileUploadUploaderEvent) => {
     <template #content="{ files, uploadedFiles, removeFileCallback, removeUploadedFileCallback }">
       <div v-if="files.length > 0">
         <div
-          class="flex flex-row items-center space-x-12 px-5 py-1"
+          class="item-selected"
           v-for="(file, index) in files"
           :key="file.name + index"
         >
@@ -66,6 +66,11 @@ const replayUploader = (event: FileUploadUploaderEvent) => {
       </div>
     </template>
   </FileUpload>
-  <!-- <p v-for="result in results" :key="result">{{ result }}</p> -->
   <ReplaySummary v-for="result in results" :key="result.name" :file="result"></ReplaySummary>
 </template>
+
+<style scoped>
+.item-selected {
+  @apply flex flex-row items-center space-x-12 px-5 py-1;
+}
+</style>
