@@ -29,7 +29,7 @@ const replayUploader = (event: FileUploadUploaderEvent) => {
     @uploader="replayUploader($event)"
   >
     <template #empty>
-      <p>Drag and drop files to here to upload.</p>
+      <p>Drag and drop replay files here to upload.</p>
     </template>
     <template #content="{ files, uploadedFiles, removeFileCallback, removeUploadedFileCallback }">
       <div v-if="files.length > 0">
