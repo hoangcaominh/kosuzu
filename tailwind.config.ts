@@ -34,6 +34,7 @@ export default {
         "th06": "#cc1f06",
         "th07": "#cc75af",
         "th08": "#2a2c82",
+        "th09": "#B00B69", // TODO: Update color later
         "th10": "#789107",
         "th11": "#48130b",
         "th12": "#3458bf",
