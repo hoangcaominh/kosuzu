@@ -56,6 +56,11 @@ export default {
                     shot: [ "Reimu", "Marisa" ],
                     subshot: [ "A", "B", "C" ]
                 },
+                th12: {
+                    title: "Undefined Fantastic Object",
+                    shot: [ "Reimu", "Marisa", "Sanae" ],
+                    subshot: [ "A", "B" ]
+                },
                 difficulty: [
                     "Easy",
                     "Normal",
