@@ -23,6 +23,7 @@ export default {
                 },
                 th07: {
                     title: "Perfect Cherry Blossom",
+                    shot: [ "ReimuA", "ReimuB", "MarisaA", "MarisaB", "SakuyaA", "SakuyaB" ],
                 },
                 th08: {
                     title: "Imperishable Night",

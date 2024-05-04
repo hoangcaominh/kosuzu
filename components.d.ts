@@ -15,6 +15,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Th06Summary: typeof import('./src/components/tables/Th06Summary.vue')['default']
+    Th07Summary: typeof import('./src/components/tables/Th07Summary.vue')['default']
     Th08Summary: typeof import('./src/components/tables/Th08Summary.vue')['default']
     Th09Summary: typeof import('./src/components/tables/Th09Summary.vue')['default']
     Th10Summary: typeof import('./src/components/tables/Th10Summary.vue')['default']
