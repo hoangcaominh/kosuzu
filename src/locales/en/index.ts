@@ -60,6 +60,11 @@ export default {
                     title: "Ten Desires",
                     shot: [ "Reimu", "Marisa", "Sanae", "Youmu" ]
                 },
+                th14: {
+                    title: "Double Dealing Character",
+                    shot: [ "Reimu", "Marisa", "Sakuya" ],
+                    subshot: [ "A", "B" ]
+                },
                 difficulty: [
                     "Easy",
                     "Normal",
