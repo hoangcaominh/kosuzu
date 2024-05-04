@@ -65,6 +65,10 @@ export default {
                     shot: [ "Reimu", "Marisa", "Sakuya" ],
                     subshot: [ "A", "B" ]
                 },
+                th15: {
+                    title: "Legacy of Lunatic Kingdom",
+                    shot: [ "Reimu", "Marisa", "Sanae", "Reisen" ]
+                },
                 difficulty: [
                     "Easy",
                     "Normal",
