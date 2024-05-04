@@ -42,6 +42,27 @@ export default {
                     ],
                     spell_card_id: spells
                 },
+                th09: {
+                    title: "Phantasmagoria of Flower View",
+                    shot: [
+                        "Reimu",
+                        "Marisa",
+                        "Sakuya",
+                        "Youmu",
+                        "Reisen",
+                        "Cirno",
+                        "Lyrica",
+                        "Mystia",
+                        "Tewi",
+                        "Yuuka",
+                        "Aya",
+                        "Medicine",
+                        "Komachi",
+                        "Eiki",
+                        "Merlin",
+                        "Lunasa"
+                    ]
+                },
                 th10: {
                     title: "Mountain of Faith",
                     shot: [ "Reimu", "Marisa" ],
