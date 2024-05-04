@@ -24,4 +24,7 @@ app.use(ToastService)
 import Toast from "primevue/toast"
 app.component("Toast", Toast)
 
+import { i18n } from "./locales"
+app.use(i18n)
+
 app.mount("#app")
