@@ -7,6 +7,7 @@ export default {
                 game: "Game",
                 difficulty: "Difficulty",
                 shot: "Shottype",
+                route: "Route",
                 score: "Score",
                 date: "Date",
                 name: "Name",
@@ -55,6 +56,18 @@ export default {
                     title: "Undefined Fantastic Object",
                     shot: [ "Reimu", "Marisa", "Sanae" ],
                     subshot: [ "A", "B" ]
+                },
+                th128: {
+                    title: "Great Fairy Wars",
+                    route: [
+                        "A-1",
+                        "A-2",
+                        "B-1",
+                        "B-2",
+                        "C-1",
+                        "C-2",
+                        "Ex"
+                    ]
                 },
                 th13: {
                     title: "Ten Desires",
