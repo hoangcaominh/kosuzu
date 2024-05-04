@@ -18,12 +18,7 @@ export default {
             values: {
                 th06: {
                     title: "The Embodiment of Scarlet Devil",
-                    shot: [
-                        "ReimuA",
-                        "ReimuB",
-                        "MarisaA",
-                        "MarisaB",
-                    ],
+                    shot: [ "ReimuA", "ReimuB", "MarisaA", "MarisaB" ],
                 },
                 th07: {
                     title: "Perfect Cherry Blossom",
@@ -60,6 +55,10 @@ export default {
                     title: "Undefined Fantastic Object",
                     shot: [ "Reimu", "Marisa", "Sanae" ],
                     subshot: [ "A", "B" ]
+                },
+                th13: {
+                    title: "Ten Desires",
+                    shot: [ "Reimu", "Marisa", "Sanae", "Youmu" ]
                 },
                 difficulty: [
                     "Easy",
