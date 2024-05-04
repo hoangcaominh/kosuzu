@@ -69,6 +69,11 @@ export default {
                     title: "Legacy of Lunatic Kingdom",
                     shot: [ "Reimu", "Marisa", "Sanae", "Reisen" ]
                 },
+                th16: {
+                    title: "Hidden Star in Four Seasons",
+                    shot: [ "Reimu", "Cirno", "Aya", "Marisa" ],
+                    season: [ "Spring", "Summer", "Autumn", "Winter" ]
+                },
                 difficulty: [
                     "Easy",
                     "Normal",
