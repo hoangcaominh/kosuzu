@@ -24,5 +24,6 @@ declare module 'vue' {
     Th15Summary: typeof import('./src/components/tables/Th15Summary.vue')['default']
     Th16Summary: typeof import('./src/components/tables/Th16Summary.vue')['default']
     Th17Summary: typeof import('./src/components/tables/Th17Summary.vue')['default']
+    Th18Summary: typeof import('./src/components/tables/Th18Summary.vue')['default']
   }
 }

@@ -79,6 +79,10 @@ export default {
                     shot: [ "Reimu", "Marisa", "Youmu" ],
                     subshot: [ "Wolf", "Otter", "Eagle" ]
                 },
+                th18: {
+                    title: "Unconnected Marketeers",
+                    shot: [ "Reimu", "Marisa", "Sakuya", "Sanae" ]
+                },
                 difficulty: [
                     "Easy",
                     "Normal",
