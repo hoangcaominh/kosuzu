@@ -74,6 +74,11 @@ export default {
                     shot: [ "Reimu", "Cirno", "Aya", "Marisa" ],
                     season: [ "Spring", "Summer", "Autumn", "Winter" ]
                 },
+                th17: {
+                    title: "Wily Beast and Weakest Creature",
+                    shot: [ "Reimu", "Marisa", "Youmu" ],
+                    subshot: [ "Wolf", "Otter", "Eagle" ]
+                },
                 difficulty: [
                     "Easy",
                     "Normal",
