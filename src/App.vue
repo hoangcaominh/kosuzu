@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from "vue-router"
   <Toast />
   <div class="main">
     <header>
-      <nav class="grid grid-cols-2 gap-1">
+      <nav class="grid grid-cols-2 gap-2">
         <RouterLink
           class="route"
           to="/"
@@ -26,7 +26,7 @@ import { RouterLink, RouterView } from "vue-router"
 
 <style scoped>
 .main {
-  @apply container mx-auto space-y-8;
+  @apply container mx-auto space-y-10;
 }
 
 .route {
