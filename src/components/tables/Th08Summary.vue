@@ -28,7 +28,7 @@ defineProps(["filename", "info"])
                 </tr>
                 <tr>
                     <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.score`) }}</th>
-                    <td class="border border-slate-500 px-3 py-1">{{ info.score }}</td>
+                    <td class="border border-slate-500 px-3 py-1">{{ $n(info.score) }}</td>
                 </tr>
                 <tr>
                     <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.date`) }}</th>
