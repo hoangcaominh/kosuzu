@@ -48,8 +48,13 @@ export default {
                 },
                 th10: {
                     title: "Mountain of Faith",
-                    shot: [ "Reimu", "Marisa", ],
-                    subshot: [ "A", "B", "C", ]
+                    shot: [ "Reimu", "Marisa" ],
+                    subshot: [ "A", "B", "C" ]
+                },
+                th11: {
+                    title: "Subterranean Animism",
+                    shot: [ "Reimu", "Marisa" ],
+                    subshot: [ "A", "B", "C" ]
                 },
                 difficulty: [
                     "Easy",
