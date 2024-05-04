@@ -41,7 +41,18 @@ export default {
                         "Solo Youmu",
                         "Solo Yuyuko",
                     ],
-                    spell_card_id: spells
+                    spell_card_id: spells,
+                    stage: [
+                        "1",
+                        "2",
+                        "3",
+                        "4A",
+                        "4B",
+                        "5",
+                        "6A",
+                        "6B",
+                        "Extra"
+                    ]
                 },
                 th09: {
                     title: "Phantasmagoria of Flower View",

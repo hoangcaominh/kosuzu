@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import dayjs from "dayjs"
+import { CONSTANTS } from "thrpy-parser";
 
 defineProps(["filename", "info"])
+
+const stagesActive = ref(false)
 
 </script>
 
@@ -50,7 +54,32 @@ defineProps(["filename", "info"])
                     <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.spell_card_id`) }}</th>
                     <td class="border border-slate-500 px-3 py-1">{{ $t(`table.values.${info.game}.spell_card_id[${info.spell_card_id}]`) }}</td>
                 </tr>
+                <tr>
+                    <Button
+                        class="mx-2 my-1 bg-th08 active:bg-th08/50"
+                        v-if="info.type === CONSTANTS.REPLAY_TYPE.FULL_GAME && info.difficulty !== CONSTANTS.DIFFICULTY.EXTRA"
+                        @click="stagesActive = !stagesActive"
+                    >
+                        <span>Stages <span class="pi" :class="{ 'pi-caret-left': stagesActive, 'pi-caret-right': !stagesActive }"></span></span>
+                    </Button>
+                </tr>
             </tbody>
         </table>
+        <!-- TODO: Add more features to each stage -->
+        <Transition name="stages-slide">
+            <table class="container border border-separate border-slate-500 text-left shadow-lg shadow-th08/50" v-show="stagesActive">
+                <thead>
+                    <tr>
+                        <th class="border border-slate-500 bg-th08 text-slate-100 px-3 py-1" colspan="2">Stages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="stage in info.stages" :key="stage.stage">
+                        <th class="border border-slate-500 px-3 py-1">Stage {{ $t(`table.values.${info.game}.stage[${stage.stage}]`) }}</th>
+                        <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </Transition>
     </div>
 </template>
