@@ -19,6 +19,7 @@ props.file.arrayBuffer().then((buffer) => {
 </script>
 
 <template>
+  <Th06Summary v-if="info.game == CONSTANTS.GAME.TH06.ID" :filename="file.name" :info="info"></Th06Summary>
   <Th08Summary v-if="info.game == CONSTANTS.GAME.TH08.ID" :filename="file.name" :info="info"></Th08Summary>
 </template>
 

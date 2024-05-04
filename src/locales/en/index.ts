@@ -18,6 +18,12 @@ export default {
             values: {
                 th06: {
                     title: "The Embodiment of Scarlet Devil",
+                    shot: [
+                        "ReimuA",
+                        "ReimuB",
+                        "MarisaA",
+                        "MarisaB",
+                    ],
                 },
                 th07: {
                     title: "Perfect Cherry Blossom",
