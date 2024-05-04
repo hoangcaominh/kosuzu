@@ -32,7 +32,7 @@ defineProps(["filename", "info"])
                 </tr>
                 <tr>
                     <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.date`) }}</th>
-                    <td class="border border-slate-500 px-3 py-1">{{ dayjs(info.date.getTime() + info.date.getTimezoneOffset() * 60000).format("YYYY-MM-DD HH:mm:ss") }}</td>
+                    <td class="border border-slate-500 px-3 py-1">{{ dayjs(info.date).format("YYYY-MM-DD") }}</td>
                 </tr>
                 <tr>
                     <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.name`) }}</th>
