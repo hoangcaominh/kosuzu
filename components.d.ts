@@ -14,5 +14,6 @@ declare module 'vue' {
     ReplayUpload: typeof import('./src/components/ReplayUpload.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Th08Summary: typeof import('./src/components/tables/Th08Summary.vue')['default']
   }
 }

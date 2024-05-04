@@ -1,51 +1,28 @@
-<script setup lang="ts">
+<script setup>
 import { Buffer } from "buffer"
-import { parse } from "thrpy-parser"
+import { parse, CONSTANTS } from "thrpy-parser"
 import { ref } from "vue"
+import { useToast } from "primevue/usetoast"
+const toast = useToast()
 
-const props = defineProps<{
-  file: File
-}>()
+const props = defineProps(["file"])
 
-const info = ref()
-const shadowColor = ref()
+const info = ref({})
 
 props.file.arrayBuffer().then((buffer) => {
   info.value = parse(Buffer.from(buffer))
-  shadowColor.value = `table-${info.value.game}`
-
-  // Process the received data
-  info.value.date = new Date(info.value.date).toUTCString()
+  toast.add({ severity: "success", summary: "Success", detail: `Uploaded ${props.file.name}.`, life: 3000 })
+}).catch(err => {
+  toast.add({ severity: "error", summary: "Error", detail: `${props.file.name} ${err}`, life: 5000 })
 })
 
 </script>
 
 <template>
-  <table class="table" :class="shadowColor">
-    <thead>
-      <tr>
-        <th class="table-border cell" colspan="3">{{ file.name }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(value, key) in info" :key="key">
-        <th class="table-border cell">{{ key }}</th>
-        <td class="table-border cell">{{ value }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <Th08Summary v-if="info.game == CONSTANTS.GAME.TH08.ID" :filename="file.name" :info="info"></Th08Summary>
 </template>
 
 <style scoped>
-.table {
-  @apply container;
-  @apply border border-separate border-slate-500;
-  @apply text-left;
-}
-
-.table-border {
-  @apply border border-slate-500;
-}
 
 .table-th01 { @apply shadow-lg shadow-th01/50 }
 .table-th02 { @apply shadow-lg shadow-th02/50 }
@@ -54,7 +31,6 @@ props.file.arrayBuffer().then((buffer) => {
 .table-th05 { @apply shadow-lg shadow-th05/50 }
 .table-th06 { @apply shadow-lg shadow-th06/50 }
 .table-th07 { @apply shadow-lg shadow-th07/50 }
-.table-th08 { @apply shadow-lg shadow-th08/50 }
 .table-th10 { @apply shadow-lg shadow-th10/50 }
 .table-th11 { @apply shadow-lg shadow-th11/50 }
 .table-th12 { @apply shadow-lg shadow-th12/50 }
@@ -66,7 +42,4 @@ props.file.arrayBuffer().then((buffer) => {
 .table-th17 { @apply shadow-lg shadow-th17/50 }
 .table-th18 { @apply shadow-lg shadow-th18/50 }
 
-.cell {
-  @apply px-3 py-1
-}
 </style>

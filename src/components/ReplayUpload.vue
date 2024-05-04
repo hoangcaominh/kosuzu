@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import type { FileUploadUploaderEvent } from "primevue/fileupload"
-import { useToast } from "primevue/usetoast"
-import ReplaySummary from "./ReplaySummary.vue"
-const toast = useToast()
 
 // 512 KB
 const MAX_FILE_SIZE = 1024 * 512
@@ -16,7 +13,6 @@ const replayUploader = (event: FileUploadUploaderEvent) => {
   const replays = event.files as File[]
   results.value = []
   replays.forEach((replay) => results.value.push(replay))
-  toast.add({ severity: "success", summary: "Success", detail: "Replays Uploaded", life: 3000 })
 }
 </script>
 
@@ -34,13 +30,12 @@ const replayUploader = (event: FileUploadUploaderEvent) => {
     <template #content="{ files, uploadedFiles, removeFileCallback, removeUploadedFileCallback }">
       <div v-if="files.length > 0">
         <div
-          class="item-selected"
+          class="flex flex-row items-center space-x-12 px-5 py-1"
           v-for="(file, index) in files"
           :key="file.name + index"
         >
           <div>{{ file.name }}</div>
-          <div>{{ (file.size / 1024).toFixed(2) }} KB</div>
-          <Badge class="px-3" value="Pending" severity="warning" />
+          <Badge class="px-3" severity="info">{{ (file.size / 1024).toFixed(2) }} KB</Badge>
           <Button
             icon="pi pi-times"
             @click="removeFileCallback(index)"
@@ -68,9 +63,3 @@ const replayUploader = (event: FileUploadUploaderEvent) => {
   </FileUpload>
   <ReplaySummary v-for="result in results" :key="result.name" :file="result"></ReplaySummary>
 </template>
-
-<style scoped>
-.item-selected {
-  @apply flex flex-row items-center space-x-12 px-5 py-1;
-}
-</style>
