@@ -9,10 +9,12 @@
   @tailwind utilities;
 }
 
-.stages-slide-enter-active, .stages-slide-leave-active {
+.stages-slide-enter-active,
+.stages-slide-leave-active {
   @apply transition duration-500 ease-out;
 }
 
-.stages-slide-enter-from, .stages-slide-leave-to {
+.stages-slide-enter-from,
+.stages-slide-leave-to {
   @apply -translate-x-20 opacity-0;
 }
