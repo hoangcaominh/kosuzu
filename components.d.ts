@@ -16,5 +16,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     Th06Summary: typeof import('./src/components/tables/Th06Summary.vue')['default']
     Th08Summary: typeof import('./src/components/tables/Th08Summary.vue')['default']
+    Th10Summary: typeof import('./src/components/tables/Th10Summary.vue')['default']
   }
 }

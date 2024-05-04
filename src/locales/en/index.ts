@@ -46,6 +46,11 @@ export default {
                     ],
                     spell_card_id: spells
                 },
+                th10: {
+                    title: "Mountain of Faith",
+                    shot: [ "Reimu", "Marisa", ],
+                    subshot: [ "A", "B", "C", ]
+                },
                 difficulty: [
                     "Easy",
                     "Normal",
