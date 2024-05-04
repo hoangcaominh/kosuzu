@@ -1,5 +1,5 @@
-<script setup>
-import * as dayjs from "dayjs"
+<script setup lang="ts">
+import dayjs from "dayjs"
 
 defineProps(["filename", "info"])
 
