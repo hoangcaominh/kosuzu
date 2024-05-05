@@ -97,11 +97,23 @@ const stagesActive = ref(false)
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">Stage</th>
+            <th class="border border-slate-500 px-3 py-1">Score</th>
+            <th class="border border-slate-500 px-3 py-1">Lives</th>
+            <th class="border border-slate-500 px-3 py-1">Bombs</th>
+            <th class="border border-slate-500 px-3 py-1">Power</th>
+            <th class="border border-slate-500 px-3 py-1">Rank</th>
+          </tr>
           <tr v-for="stage in info.stages" :key="stage.stage">
             <th class="border border-slate-500 px-3 py-1">
               Stage {{ $t(`table.values.stage[${stage.stage}]`) }}
             </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.lives }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.bombs }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.power }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.rank }}</td>
           </tr>
         </tbody>
       </table>
