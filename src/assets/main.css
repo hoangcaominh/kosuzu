@@ -10,11 +10,18 @@
 }
 
 .stages-slide-enter-active,
-.stages-slide-leave-active {
+.stages-slide-leave-active,
+.replay-slide-enter-active,
+.replay-slide-leave-active {
   @apply transition duration-500 ease-out;
 }
 
 .stages-slide-enter-from,
 .stages-slide-leave-to {
+  @apply translate-x-20 opacity-0;
+}
+
+.replay-slide-enter-from,
+.replay-slide-leave-to {
   @apply -translate-x-20 opacity-0;
 }
