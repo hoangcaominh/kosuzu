@@ -14,7 +14,12 @@ export default {
         slowdown: "Slowdown",
         type: "Replay type",
         spell_card_id: "Spell card id",
-        stages: "Stages"
+        stages: "Stages",
+        stage_number: ({ named, linked }: any) => {
+          if (named("stage") === -1)
+            return "Start"
+          return `Stage ${linked(`table.values.${(named("game")) ? `${(named("game"))}.stage` : "stage"}[${named("stage")}]`)}`
+        }
       },
       values: {
         th06: {
