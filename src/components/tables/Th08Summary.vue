@@ -9,90 +9,87 @@ const stagesActive = ref(false)
 </script>
 
 <template>
-  <div class="flex flex-row space-x-3">
-    <table
-      class="container border border-separate border-slate-500 text-left shadow-lg shadow-th08/50"
-    >
-      <thead>
-        <tr>
-          <th class="border border-slate-500 bg-th08 text-slate-100 px-3 py-1" colspan="100%">
-            {{ filename }}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.game`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">
-            {{ $t(`table.values.${info.game}.title`) }}
-          </td>
-        </tr>
-        <tr>
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.difficulty`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">
-            {{ $t(`table.values.difficulty.${info.difficulty}`) }}
-          </td>
-        </tr>
-        <tr>
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.shot`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">
-            {{ $t(`table.values.${info.game}.shot[${info.shot}]`) }}
-          </td>
-        </tr>
-        <tr>
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.score`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">{{ $n(info.score) }}</td>
-        </tr>
-        <tr>
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.date`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">
-            {{
-              dayjs(info.date.getTime() + info.date.getTimezoneOffset() * 60000).format(
-                "YYYY-MM-DD HH:mm:ss"
-              )
-            }}
-          </td>
-        </tr>
-        <tr>
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.name`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">{{ info.name }}</td>
-        </tr>
-        <tr>
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.slowdown`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">{{ info.slowdown.toFixed(2) }}%</td>
-        </tr>
-        <tr>
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.type`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">
-            {{ $t(`table.values.type[${info.type}]`) }}
-          </td>
-        </tr>
-        <tr v-if="info.spell_card_id">
-          <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.spell_card_id`) }}</th>
-          <td class="border border-slate-500 px-3 py-1">
-            {{ $t(`table.values.${info.game}.spell_card_id[${info.spell_card_id}]`) }}
-          </td>
-        </tr>
-        <tr>
-          <Button
-            class="mx-2 my-1 bg-th08 active:bg-th08/50"
-            v-if="
-              info.type === CONSTANTS.REPLAY_TYPE.FULL_GAME &&
-              info.difficulty !== CONSTANTS.DIFFICULTY.EXTRA
-            "
-            @click="stagesActive = !stagesActive"
-          >
-            <span
-              >Stages
-              <span
-                class="pi"
-                :class="{ 'pi-caret-left': stagesActive, 'pi-caret-right': !stagesActive }"
-              ></span
-            ></span>
-          </Button>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flex flex-row">
+    <Transition name="replay-slide">
+      <table
+        class="container border border-separate border-slate-500 text-left shadow-lg shadow-th08/50"
+        v-show="!stagesActive"
+      >
+        <thead>
+          <tr>
+            <th class="border border-slate-500 bg-th08 text-slate-100 px-3 py-1" colspan="100%">
+              {{ filename }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.game`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.values.${info.game}.title`) }}
+            </td>
+          </tr>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.difficulty`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.values.difficulty.${info.difficulty}`) }}
+            </td>
+          </tr>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.shot`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.values.${info.game}.shot[${info.shot}]`) }}
+            </td>
+          </tr>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.score`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">{{ $n(info.score) }}</td>
+          </tr>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.date`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">
+              {{
+                dayjs(info.date.getTime() + info.date.getTimezoneOffset() * 60000).format(
+                  "YYYY-MM-DD HH:mm:ss"
+                )
+              }}
+            </td>
+          </tr>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.name`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">{{ info.name }}</td>
+          </tr>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.slowdown`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">{{ info.slowdown.toFixed(2) }}%</td>
+          </tr>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.type`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.values.type[${info.type}]`) }}
+            </td>
+          </tr>
+          <tr v-if="info.spell_card_id">
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.spell_card_id`) }}</th>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.values.${info.game}.spell_card_id[${info.spell_card_id}]`) }}
+            </td>
+          </tr>
+          <tr>
+            <Button
+              class="mx-2 my-1 bg-th08 hover:bg-th08/75 active:bg-th08/50"
+              v-if="
+                info.type === CONSTANTS.REPLAY_TYPE.FULL_GAME &&
+                info.difficulty !== CONSTANTS.DIFFICULTY.EXTRA
+              "
+              @click="stagesActive = !stagesActive"
+            >
+              <span>Stages <span class="pi pi-caret-right"></span></span>
+            </Button>
+          </tr>
+        </tbody>
+      </table>
+    </Transition>
     <Transition name="stages-slide">
       <table
         class="container border border-separate border-slate-500 text-left shadow-lg shadow-th08/50"
@@ -127,6 +124,14 @@ const stagesActive = ref(false)
             <td class="border border-slate-500 px-3 py-1">{{ stage.point_items }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.piv }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.graze }}</td>
+          </tr>
+          <tr>
+            <Button
+              class="mx-2 my-1 bg-th08 hover:bg-th08/75 active:bg-th08/50"
+              @click="stagesActive = false"
+            >
+              <span><span class="pi pi-caret-left"></span> Back</span>
+            </Button>
           </tr>
         </tbody>
       </table>
