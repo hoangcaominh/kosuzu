@@ -15,7 +15,7 @@ const stagesActive = ref(false)
     >
       <thead>
         <tr>
-          <th class="border border-slate-500 bg-th07 text-slate-100 px-3 py-1" colspan="3">
+          <th class="border border-slate-500 bg-th07 text-slate-100 px-3 py-1" colspan="100%">
             {{ filename }}
           </th>
         </tr>
@@ -81,7 +81,6 @@ const stagesActive = ref(false)
         </tr>
       </tbody>
     </table>
-    <!-- TODO: Add more features to each stage -->
     <Transition name="stages-slide">
       <table
         class="container border border-separate border-slate-500 text-left shadow-lg shadow-th07/50"
@@ -89,7 +88,7 @@ const stagesActive = ref(false)
       >
         <thead>
           <tr>
-            <th class="border border-slate-500 bg-th07 text-slate-100 px-3 py-1" colspan="2">
+            <th class="border border-slate-500 bg-th07 text-slate-100 px-3 py-1" colspan="100%">
               Stages
             </th>
           </tr>
