@@ -101,11 +101,23 @@ const stagesActive = ref(false)
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">Stage</th>
+            <th class="border border-slate-500 px-3 py-1">Score</th>
+            <th class="border border-slate-500 px-3 py-1">Motivation</th>
+            <th class="border border-slate-500 px-3 py-1">Perfect Freeze</th>
+            <th class="border border-slate-500 px-3 py-1">Frozen Area</th>
+            <th class="border border-slate-500 px-3 py-1">Graze</th>
+          </tr>
           <tr v-for="stage in info.stages" :key="stage.stage">
             <th class="border border-slate-500 px-3 py-1">
-              Stage {{ $t(`table.values.${info.game}.stage[${stage.stage}]`) }}
+              {{ $t(`table.labels.stage_number`, { stage: stage.stage, game: info.game }) }}
             </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.motivation)) ? `${(stage.motivation / 100) >> 0}%` : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.perfect_freeze)) ? `${(stage.perfect_freeze / 100) >> 0}%` : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.frozen_area)) ? `${(stage.frozen_area) >> 0}%` : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.graze }}</td>
           </tr>
         </tbody>
       </table>
