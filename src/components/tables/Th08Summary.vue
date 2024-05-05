@@ -93,7 +93,6 @@ const stagesActive = ref(false)
         </tr>
       </tbody>
     </table>
-    <!-- TODO: Add more features to each stage -->
     <Transition name="stages-slide">
       <table
         class="container border border-separate border-slate-500 text-left shadow-lg shadow-th08/50"
@@ -107,11 +106,27 @@ const stagesActive = ref(false)
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <th class="border border-slate-500 px-3 py-1">Stage</th>
+            <th class="border border-slate-500 px-3 py-1">Score</th>
+            <th class="border border-slate-500 px-3 py-1">Lives</th>
+            <th class="border border-slate-500 px-3 py-1">Bombs</th>
+            <th class="border border-slate-500 px-3 py-1">Power</th>
+            <th class="border border-slate-500 px-3 py-1">Items</th>
+            <th class="border border-slate-500 px-3 py-1">PIV</th>
+            <th class="border border-slate-500 px-3 py-1">Graze</th>
+          </tr>
           <tr v-for="stage in info.stages" :key="stage.stage">
             <th class="border border-slate-500 px-3 py-1">
-              Stage {{ $t(`table.values.${info.game}.stage[${stage.stage}]`) }}
+              {{ $t(`table.labels.stage_number`, { stage: stage.stage, game: info.game }) }}
             </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.lives }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.bombs }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.power }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.point_items }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.piv }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ stage.graze }}</td>
           </tr>
         </tbody>
       </table>
