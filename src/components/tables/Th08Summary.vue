@@ -10,7 +10,7 @@ const stagesActive = ref(false)
 
 <template>
   <div class="flex flex-row">
-    <Transition name="replay-slide">
+    <!-- <Transition name="replay-slide"> -->
       <table
         class="container border border-separate border-slate-500 text-left shadow-lg shadow-th08/50"
         v-show="!stagesActive"
@@ -89,8 +89,8 @@ const stagesActive = ref(false)
           </tr>
         </tbody>
       </table>
-    </Transition>
-    <Transition name="stages-slide">
+    <!-- </Transition> -->
+    <!-- <Transition name="stages-slide"> -->
       <table
         class="container border border-separate border-slate-500 text-left shadow-lg shadow-th08/50"
         v-show="stagesActive"
@@ -135,6 +135,6 @@ const stagesActive = ref(false)
           </tr>
         </tbody>
       </table>
-    </Transition>
+    <!-- </Transition> -->
   </div>
 </template>

@@ -9,7 +9,7 @@
   @tailwind utilities;
 }
 
-.stages-slide-enter-active,
+/* .stages-slide-enter-active,
 .stages-slide-leave-active,
 .replay-slide-enter-active,
 .replay-slide-leave-active {
@@ -24,4 +24,4 @@
 .replay-slide-enter-from,
 .replay-slide-leave-to {
   @apply -translate-x-20 opacity-0;
-}
+} */

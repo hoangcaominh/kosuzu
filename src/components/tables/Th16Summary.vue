@@ -22,7 +22,7 @@ function formatSeasonPower(seasonPower: number): string {
 
 <template>
   <div class="flex flex-row">
-    <Transition name="replay-slide">
+    <!-- <Transition name="replay-slide"> -->
       <table
         class="container border border-separate border-slate-500 text-left shadow-lg shadow-th16/50"
         v-show="!stagesActive"
@@ -98,8 +98,8 @@ function formatSeasonPower(seasonPower: number): string {
           </tr>
         </tbody>
       </table>
-    </Transition>
-    <Transition name="stages-slide">
+    <!-- </Transition> -->
+    <!-- <Transition name="stages-slide"> -->
       <table
         class="container border border-separate border-slate-500 text-left shadow-lg shadow-th16/50"
         v-show="stagesActive"
@@ -142,6 +142,6 @@ function formatSeasonPower(seasonPower: number): string {
           </tr>
         </tbody>
       </table>
-    </Transition>
+    <!-- </Transition> -->
   </div>
 </template>
