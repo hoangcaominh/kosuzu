@@ -3,6 +3,7 @@ import { Buffer } from "buffer"
 import { parse, CONSTANTS } from "thrpy-parser"
 import { ref } from "vue"
 import { useToast } from "primevue/usetoast"
+import { appendStartingStage } from "@/utilities/replay"
 const toast = useToast()
 
 const props = defineProps(["file"])
@@ -12,7 +13,7 @@ const info = ref({})
 props.file
   .arrayBuffer()
   .then((buffer) => {
-    info.value = parse(Buffer.from(buffer))
+    info.value = appendStartingStage(parse(Buffer.from(buffer)))
     toast.add({
       severity: "success",
       summary: "Success",
