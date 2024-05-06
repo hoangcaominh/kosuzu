@@ -12,7 +12,11 @@ export function appendStartingStage(replay: any): object {
         for (const stageInstance of replay.stages)
             [stageInstance.p2_shot, p2] = [p2, stageInstance.p2_shot]
 
-        Object.assign(newStageInstance, { p2_shot: p2 })
+        replay.stages.push({
+            stage: newIdx,
+            p2_shot: p2
+        })
+        return replay
     }
 
     Object.assign(newStageInstance, {

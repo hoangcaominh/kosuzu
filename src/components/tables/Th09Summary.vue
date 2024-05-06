@@ -93,7 +93,7 @@ const stagesActive = ref(false)
             <th class="border border-slate-500 px-3 py-1">
               {{ $t(`table.labels.stage_number`, { stage: stage.stage, game: info.game }) }}
             </th>
-            <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
+            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.score)) ? $n(stage.score) : "" }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.lives }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.p2_shot)) ? $t(`table.values.${info.game}.shot[${stage.p2_shot}]`) : "" }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.p2_score)) ? $n(stage.p2_score) : "" }}</td>
