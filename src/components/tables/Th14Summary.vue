@@ -93,7 +93,7 @@ const stagesActive = ref(false)
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th14 text-slate-100 px-3 py-1" colspan="100%">
-              Stages
+              {{ filename }} - Stages
             </th>
           </tr>
         </thead>

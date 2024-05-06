@@ -107,7 +107,7 @@ function formatSeasonPower(seasonPower: number): string {
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th16 text-slate-100 px-3 py-1" colspan="100%">
-              Stages
+              {{ filename }} - Stages
             </th>
           </tr>
         </thead>
