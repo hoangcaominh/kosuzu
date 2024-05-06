@@ -10,10 +10,10 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
 </script>
 
 <template>
-  <div class="flex flex-row">
-    <!-- <Transition name="replay-slide"> -->
+  <div class="grid">
+    <Transition name="replay-slide">
       <table
-        class="container border border-separate border-slate-500 text-left shadow-lg shadow-th13/50"
+        class="container table-overlap border border-separate border-slate-500 text-left shadow-lg shadow-th13/50"
         v-show="!stagesActive"
       >
         <thead>
@@ -84,10 +84,10 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
           </tr>
         </tbody>
       </table>
-    <!-- </Transition> -->
-    <!-- <Transition name="stages-slide"> -->
+    </Transition>
+    <Transition name="stages-slide">
       <table
-        class="container border border-separate border-slate-500 text-left shadow-lg shadow-th13/50"
+        class="container table-overlap border border-separate border-slate-500 text-left shadow-lg shadow-th13/50"
         v-show="stagesActive"
       >
         <thead>
@@ -130,6 +130,6 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
           </tr>
         </tbody>
       </table>
-    <!-- </Transition> -->
+    </Transition>
   </div>
 </template>
