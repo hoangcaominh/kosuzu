@@ -27,32 +27,18 @@ const replayUploader = (event: FileUploadUploaderEvent) => {
     <template #empty>
       <p>Drag and drop replay files here to upload.</p>
     </template>
-    <template #content="{ files, uploadedFiles, removeFileCallback, removeUploadedFileCallback }">
+    <template #content="{ files, removeFileCallback }">
       <div v-if="files.length > 0">
         <div
-          class="flex flex-row items-center space-x-12 px-5 py-1"
+          class="grid grid-cols-3 w-1/2 items-center space-x-1 px-5 py-1"
           v-for="(file, index) in files"
           :key="file.name + index"
         >
           <div>{{ file.name }}</div>
-          <Badge class="px-3" severity="info">{{ (file.size / 1024).toFixed(2) }} KB</Badge>
+          <Badge class="w-24 px-3" severity="info">{{ (file.size / 1024).toFixed(2) }} KB</Badge>
           <Button
             icon="pi pi-times"
             @click="removeFileCallback(index)"
-            outlined
-            rounded
-            severity="danger"
-          ></Button>
-        </div>
-      </div>
-      <div v-if="uploadedFiles.length > 0">
-        <div v-for="(file, index) in uploadedFiles" :key="file.name + index">
-          <div>{{ file.name }}</div>
-          <div>{{ (file.size / 1024).toFixed(2) }} KB</div>
-          <Badge class="px-3" value="Completed" severity="success" />
-          <Button
-            icon="pi pi-times"
-            @click="removeUploadedFileCallback(index)"
             outlined
             rounded
             severity="danger"
