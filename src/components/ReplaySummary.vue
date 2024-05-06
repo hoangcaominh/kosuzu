@@ -6,6 +6,38 @@ import { useToast } from "primevue/usetoast"
 import { appendStartingStage } from "@/utilities/replay"
 const toast = useToast()
 
+import Th06Summary from "./tables/Th06Summary.vue"
+import Th07Summary from "./tables/Th07Summary.vue"
+import Th08Summary from "./tables/Th08Summary.vue"
+import Th09Summary from "./tables/Th09Summary.vue"
+import Th10Summary from "./tables/Th10Summary.vue"
+import Th11Summary from "./tables/Th11Summary.vue"
+import Th12Summary from "./tables/Th12Summary.vue"
+import Th128Summary from "./tables/Th128Summary.vue"
+import Th13Summary from "./tables/Th13Summary.vue"
+import Th14Summary from "./tables/Th14Summary.vue"
+import Th15Summary from "./tables/Th15Summary.vue"
+import Th16Summary from "./tables/Th16Summary.vue"
+import Th17Summary from "./tables/Th17Summary.vue"
+import Th18Summary from "./tables/Th18Summary.vue"
+
+const touhouComponentList = {
+  [CONSTANTS.GAME.TH06.ID]: Th06Summary,
+  [CONSTANTS.GAME.TH07.ID]: Th07Summary,
+  [CONSTANTS.GAME.TH08.ID]: Th08Summary,
+  [CONSTANTS.GAME.TH09.ID]: Th09Summary,
+  [CONSTANTS.GAME.TH10.ID]: Th10Summary,
+  [CONSTANTS.GAME.TH11.ID]: Th11Summary,
+  [CONSTANTS.GAME.TH12.ID]: Th12Summary,
+  [CONSTANTS.GAME.TH128.ID]: Th128Summary,
+  [CONSTANTS.GAME.TH13.ID]: Th13Summary,
+  [CONSTANTS.GAME.TH14.ID]: Th14Summary,
+  [CONSTANTS.GAME.TH15.ID]: Th15Summary,
+  [CONSTANTS.GAME.TH16.ID]: Th16Summary,
+  [CONSTANTS.GAME.TH17.ID]: Th17Summary,
+  [CONSTANTS.GAME.TH18.ID]: Th18Summary,
+}
+
 const props = defineProps(["file"])
 
 const info = ref({})
@@ -32,74 +64,5 @@ props.file
 </script>
 
 <template>
-  <Th06Summary
-    v-if="info.game == CONSTANTS.GAME.TH06.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th06Summary>
-  <Th07Summary
-    v-if="info.game == CONSTANTS.GAME.TH07.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th07Summary>
-  <Th08Summary
-    v-if="info.game == CONSTANTS.GAME.TH08.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th08Summary>
-  <Th09Summary
-    v-if="info.game == CONSTANTS.GAME.TH09.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th09Summary>
-  <Th10Summary
-    v-if="info.game == CONSTANTS.GAME.TH10.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th10Summary>
-  <Th11Summary
-    v-if="info.game == CONSTANTS.GAME.TH11.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th11Summary>
-  <Th12Summary
-    v-if="info.game == CONSTANTS.GAME.TH12.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th12Summary>
-  <Th128Summary
-    v-if="info.game == CONSTANTS.GAME.TH128.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th128Summary>
-  <Th13Summary
-    v-if="info.game == CONSTANTS.GAME.TH13.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th13Summary>
-  <Th14Summary
-    v-if="info.game == CONSTANTS.GAME.TH14.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th14Summary>
-  <Th15Summary
-    v-if="info.game == CONSTANTS.GAME.TH15.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th15Summary>
-  <Th16Summary
-    v-if="info.game == CONSTANTS.GAME.TH16.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th16Summary>
-  <Th17Summary
-    v-if="info.game == CONSTANTS.GAME.TH17.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th17Summary>
-  <Th18Summary
-    v-if="info.game == CONSTANTS.GAME.TH18.ID"
-    :filename="file.name"
-    :info="info"
-  ></Th18Summary>
+  <component :is="touhouComponentList[info.game]" :filename="file.name" :info="info"></component>
 </template>
