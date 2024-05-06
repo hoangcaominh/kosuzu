@@ -11,12 +11,12 @@
 
 .stages-slide-enter-active,
 .replay-slide-enter-active {
-  @apply transition duration-150 ease-linear;
+  @apply transition duration-0;
 }
 
 .stages-slide-leave-active,
 .replay-slide-leave-active {
-  @apply transition duration-150 ease-linear;
+  @apply transition duration-200 ease-out;
 }
 
 .stages-slide-enter-from,
