@@ -1,11 +1,25 @@
+import { CONSTANTS } from "thrpy-parser"
+
 export function appendStartingStage(replay: any): object {
+    const newStageInstance = {}
+
     let newIdx = -1
     for (const stageInstance of replay.stages)
         [stageInstance.stage, newIdx] = [newIdx, stageInstance.stage]
 
-    replay.stages.push({
+    if (replay.game == CONSTANTS.GAME.TH09.ID) {
+        let p2 = undefined
+        for (const stageInstance of replay.stages)
+            [stageInstance.p2_shot, p2] = [p2, stageInstance.p2_shot]
+
+        Object.assign(newStageInstance, { p2_shot: p2 })
+    }
+
+    Object.assign(newStageInstance, {
         stage: newIdx,
         score: replay.score
     })
+
+    replay.stages.push(newStageInstance)
     return replay
 }
