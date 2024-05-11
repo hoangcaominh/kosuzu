@@ -1,4 +1,4 @@
-import spells from "./spells"
+import th08Spells from "./th08/spells"
 
 export default {
   messages: {
@@ -46,7 +46,7 @@ export default {
             "Solo Youmu",
             "Solo Yuyuko"
           ],
-          spell_card_id: spells,
+          spell_card_id: th08Spells,
           stage: ["1", "2", "3", "4A", "4B", "5", "6A", "6B", "Ex"]
         },
         th09: {
