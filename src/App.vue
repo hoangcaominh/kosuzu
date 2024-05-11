@@ -11,6 +11,7 @@ import { RouterLink, RouterView } from "vue-router"
         <RouterLink class="route" to="/about">About</RouterLink>
       </nav>
     </header>
+    <SelectLang />
 
     <RouterView />
   </div>
