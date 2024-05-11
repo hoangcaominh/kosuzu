@@ -109,16 +109,30 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
             <th class="border border-slate-500 px-3 py-1">Trance</th>
           </tr>
           <tr v-for="stage in info.stages" :key="stage.stage">
-            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.stage_number`, { stage: stage.stage }) }}</th>
+            <th class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.labels.stage_number`, { stage: stage.stage }) }}
+            </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
             <td class="border border-slate-500 px-3 py-1">
-              {{ (!isNaN(stage.lives)) ? `${stage.lives} (${stage.life_pieces}/${EXTEND_THRESHOLD[Math.min(stage.extends, EXTEND_THRESHOLD.length)]})` : "" }}
+              {{
+                !isNaN(stage.lives)
+                  ? `${stage.lives} (${stage.life_pieces}/${
+                      EXTEND_THRESHOLD[Math.min(stage.extends, EXTEND_THRESHOLD.length)]
+                    })`
+                  : ""
+              }}
             </td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.bombs)) ? `${stage.bombs} (${stage.bomb_pieces}/8)` : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.power)) ? (stage.power / 100).toFixed(2) : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.bombs) ? `${stage.bombs} (${stage.bomb_pieces}/8)` : "" }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.power) ? (stage.power / 100).toFixed(2) : "" }}
+            </td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.piv }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.graze }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.trance)) ? (stage.trance / 200).toFixed(2) : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.trance) ? (stage.trance / 200).toFixed(2) : "" }}
+            </td>
           </tr>
           <tr>
             <Button

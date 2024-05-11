@@ -8,14 +8,11 @@ defineProps(["filename", "info"])
 const stagesActive = ref(false)
 
 function formatSeasonPower(seasonPower: number): string {
-  if (isNaN(seasonPower))
-    return ""
+  if (isNaN(seasonPower)) return ""
 
   const thresholds = [0, 100, 230, 390, 590, 840, 1140, 1140]
   let i
-  for (i = 0; i < thresholds.length - 1; i++)
-    if (seasonPower < thresholds[i])
-      break
+  for (i = 0; i < thresholds.length - 1; i++) if (seasonPower < thresholds[i]) break
   return `${i} (${seasonPower}/${thresholds[i]})`
 }
 </script>
@@ -123,14 +120,22 @@ function formatSeasonPower(seasonPower: number): string {
             <th class="border border-slate-500 px-3 py-1">Season Power</th>
           </tr>
           <tr v-for="stage in info.stages" :key="stage.stage">
-            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.stage_number`, { stage: stage.stage }) }}</th>
+            <th class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.labels.stage_number`, { stage: stage.stage }) }}
+            </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.lives }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.bombs)) ? `${stage.bombs} (${stage.bomb_pieces}/5)` : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.power)) ? (stage.power / 100).toFixed(2) : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.bombs) ? `${stage.bombs} (${stage.bomb_pieces}/5)` : "" }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.power) ? (stage.power / 100).toFixed(2) : "" }}
+            </td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.piv }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.graze }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ formatSeasonPower(stage.season_power) }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ formatSeasonPower(stage.season_power) }}
+            </td>
           </tr>
           <tr>
             <Button

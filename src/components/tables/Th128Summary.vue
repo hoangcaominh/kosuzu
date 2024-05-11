@@ -110,9 +110,15 @@ const stagesActive = ref(false)
               {{ $t(`table.labels.stage_number`, { stage: stage.stage, game: info.game }) }}
             </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.motivation)) ? `${(stage.motivation / 100) >> 0}%` : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.perfect_freeze)) ? `${(stage.perfect_freeze / 100) >> 0}%` : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.frozen_area)) ? `${(stage.frozen_area) >> 0}%` : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.motivation) ? `${(stage.motivation / 100) >> 0}%` : "" }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.perfect_freeze) ? `${(stage.perfect_freeze / 100) >> 0}%` : "" }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.frozen_area) ? `${stage.frozen_area >> 0}%` : "" }}
+            </td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.graze }}</td>
           </tr>
           <tr>

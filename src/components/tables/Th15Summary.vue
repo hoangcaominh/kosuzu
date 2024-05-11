@@ -107,11 +107,19 @@ const stagesActive = ref(false)
             <th class="border border-slate-500 px-3 py-1">Graze</th>
           </tr>
           <tr v-for="stage in info.stages" :key="stage.stage">
-            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.stage_number`, { stage: stage.stage }) }}</th>
+            <th class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.labels.stage_number`, { stage: stage.stage }) }}
+            </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.lives)) ? `${stage.lives} (${stage.life_pieces}/3)` : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.bombs)) ? `${stage.bombs} (${stage.bomb_pieces}/5)` : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.power)) ? (stage.power / 100).toFixed(2) : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.lives) ? `${stage.lives} (${stage.life_pieces}/3)` : "" }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.bombs) ? `${stage.bombs} (${stage.bomb_pieces}/5)` : "" }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.power) ? (stage.power / 100).toFixed(2) : "" }}
+            </td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.piv }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.graze }}</td>
           </tr>
