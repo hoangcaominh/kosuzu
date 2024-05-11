@@ -19,7 +19,7 @@ import { RouterLink, RouterView } from "vue-router"
 
 <style scoped>
 .main {
-  @apply container mx-auto space-y-10;
+  @apply container mx-auto space-y-5;
 }
 
 .route {
