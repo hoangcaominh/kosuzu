@@ -13,12 +13,13 @@ export default {
         name: "Name",
         slowdown: "Slowdown",
         type: "Replay type",
-        spell_card_id: "Spell card id",
+        spell_card: "Spell card",
         stages: "Stages",
         stage_number: ({ named, linked }: any) => {
-          if (named("stage") === -1)
-            return "Start"
-          return `Stage ${linked(`table.values.${(named("game")) ? `${(named("game"))}.stage` : "stage"}[${named("stage")}]`)}`
+          if (named("stage") === -1) return "Start"
+          return `Stage ${linked(
+            `table.values.${named("game") ? `${named("game")}.stage` : "stage"}[${named("stage")}]`
+          )}`
         }
       },
       values: {
@@ -46,7 +47,7 @@ export default {
             "Solo Youmu",
             "Solo Yuyuko"
           ],
-          spell_card_id: th08Spells,
+          spell_card: th08Spells,
           stage: ["1", "2", "3", "4A", "4B", "5", "6A", "6B", "Ex"]
         },
         th09: {

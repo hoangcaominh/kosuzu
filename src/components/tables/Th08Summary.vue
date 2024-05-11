@@ -70,9 +70,9 @@ const stagesActive = ref(false)
             </td>
           </tr>
           <tr v-if="info.spell_card_id">
-            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.spell_card_id`) }}</th>
+            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.spell_card`) }}</th>
             <td class="border border-slate-500 px-3 py-1">
-              {{ $t(`table.values.${info.game}.spell_card_id[${info.spell_card_id}]`) }}
+              {{ $t(`table.values.${info.game}.spell_card[${info.spell_card_id}]`) }}
             </td>
           </tr>
           <tr>

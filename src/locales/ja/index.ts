@@ -10,7 +10,7 @@ export default {
         name: "名前",
         slowdown: "Slowdown",
         type: "Replay type",
-        spell_card_id: "Spell card id",
+        spell_card: "Spell card",
         stages: "Stages"
       },
       values: {}
