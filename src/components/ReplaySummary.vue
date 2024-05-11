@@ -35,7 +35,7 @@ const touhouComponentList = {
   [CONSTANTS.GAME.TH15.ID]: Th15Summary,
   [CONSTANTS.GAME.TH16.ID]: Th16Summary,
   [CONSTANTS.GAME.TH17.ID]: Th17Summary,
-  [CONSTANTS.GAME.TH18.ID]: Th18Summary,
+  [CONSTANTS.GAME.TH18.ID]: Th18Summary
 }
 
 const props = defineProps(["file"])
@@ -45,7 +45,13 @@ const info = ref({})
 props.file
   .arrayBuffer()
   .then((buffer) => {
-    info.value = appendStartingStage(parse(Buffer.from(buffer)))
+    const replay = parse(Buffer.from(buffer))
+    if (
+      replay.type === CONSTANTS.REPLAY_TYPE.FULL_GAME &&
+      replay.difficulty !== CONSTANTS.DIFFICULTY.EXTRA
+    )
+      info.value = appendStartingStage(replay)
+    else info.value = replay
     toast.add({
       severity: "success",
       summary: "Success",

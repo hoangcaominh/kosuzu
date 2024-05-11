@@ -1,7 +1,16 @@
-import spells from "./spells"
+import th08Spells from "./th08/spells"
 
 export default {
   messages: {
+    about: {
+      body1: `
+        This website is called Kosuzu, a replay summary analysis online service.
+        And Kosuzu is a cute character from {touhou_project}.
+      `,
+      body2: `Supported games: {supported_games}`,
+      wiki_url: "https://en.wikipedia.org/wiki/Touhou_Project",
+      touhou_project: "Touhou Project"
+    },
     table: {
       labels: {
         game: "Game",
@@ -13,12 +22,14 @@ export default {
         name: "Name",
         slowdown: "Slowdown",
         type: "Replay type",
-        spell_card_id: "Spell card id",
+        spell_card: "Spell card",
         stages: "Stages",
+        back: "Back",
         stage_number: ({ named, linked }: any) => {
-          if (named("stage") === -1)
-            return "Start"
-          return `Stage ${linked(`table.values.${(named("game")) ? `${(named("game"))}.stage` : "stage"}[${named("stage")}]`)}`
+          if (named("stage") === -1) return "Start"
+          return `Stage ${linked(
+            `table.values.${named("game") ? `${named("game")}.stage` : "stage"}[${named("stage")}]`
+          )}`
         }
       },
       values: {
@@ -46,7 +57,7 @@ export default {
             "Solo Youmu",
             "Solo Yuyuko"
           ],
-          spell_card_id: spells,
+          spell_card: th08Spells,
           stage: ["1", "2", "3", "4A", "4B", "5", "6A", "6B", "Ex"]
         },
         th09: {

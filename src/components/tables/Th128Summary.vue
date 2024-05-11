@@ -78,7 +78,7 @@ const stagesActive = ref(false)
               "
               @click="stagesActive = !stagesActive"
             >
-              <span>Stages <span class="pi pi-caret-right"></span></span>
+              <span>{{ $t(`table.labels.stages`) }} <span class="pi pi-caret-right"></span></span>
             </Button>
           </tr>
         </tbody>
@@ -92,7 +92,7 @@ const stagesActive = ref(false)
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th128 text-slate-100 px-3 py-1" colspan="100%">
-              {{ filename }} - Stages
+              {{ filename }} - {{ $t(`table.labels.stages`) }}
             </th>
           </tr>
         </thead>
@@ -110,9 +110,15 @@ const stagesActive = ref(false)
               {{ $t(`table.labels.stage_number`, { stage: stage.stage, game: info.game }) }}
             </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.motivation)) ? `${(stage.motivation / 100) >> 0}%` : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.perfect_freeze)) ? `${(stage.perfect_freeze / 100) >> 0}%` : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.frozen_area)) ? `${(stage.frozen_area) >> 0}%` : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.motivation) ? `${(stage.motivation / 100) >> 0}%` : "" }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.perfect_freeze) ? `${(stage.perfect_freeze / 100) >> 0}%` : "" }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.frozen_area) ? `${stage.frozen_area >> 0}%` : "" }}
+            </td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.graze }}</td>
           </tr>
           <tr>
@@ -120,7 +126,7 @@ const stagesActive = ref(false)
               class="mx-2 my-1 bg-th128 hover:bg-th128/75 active:bg-th128/50"
               @click="stagesActive = false"
             >
-              <span><span class="pi pi-caret-left"></span> Back</span>
+              <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>
             </Button>
           </tr>
         </tbody>

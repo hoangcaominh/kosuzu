@@ -63,7 +63,7 @@ const stagesActive = ref(false)
               v-if="info.type === CONSTANTS.REPLAY_TYPE.FULL_GAME"
               @click="stagesActive = !stagesActive"
             >
-              <span>Stages <span class="pi pi-caret-right"></span></span>
+              <span>{{ $t(`table.labels.stages`) }} <span class="pi pi-caret-right"></span></span>
             </Button>
           </tr>
         </tbody>
@@ -77,7 +77,7 @@ const stagesActive = ref(false)
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th09 text-slate-100 px-3 py-1" colspan="100%">
-              {{ filename }} - Stages
+              {{ filename }} - {{ $t(`table.labels.stages`) }}
             </th>
           </tr>
         </thead>
@@ -93,17 +93,25 @@ const stagesActive = ref(false)
             <th class="border border-slate-500 px-3 py-1">
               {{ $t(`table.labels.stage_number`, { stage: stage.stage, game: info.game }) }}
             </th>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.score)) ? $n(stage.score) : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.score) ? $n(stage.score) : "" }}
+            </td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.lives }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.p2_shot)) ? $t(`table.values.${info.game}.shot[${stage.p2_shot}]`) : "" }}</td>
-            <td class="border border-slate-500 px-3 py-1">{{ (!isNaN(stage.p2_score)) ? $n(stage.p2_score) : "" }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{
+                !isNaN(stage.p2_shot) ? $t(`table.values.${info.game}.shot[${stage.p2_shot}]`) : ""
+              }}
+            </td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ !isNaN(stage.p2_score) ? $n(stage.p2_score) : "" }}
+            </td>
           </tr>
           <tr>
             <Button
               class="mx-2 my-1 bg-th09 hover:bg-th09/75 active:bg-th09/50"
               @click="stagesActive = false"
             >
-              <span><span class="pi pi-caret-left"></span> Back</span>
+              <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>
             </Button>
           </tr>
         </tbody>

@@ -47,7 +47,9 @@ const stagesActive = ref(false)
           </tr>
           <tr>
             <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.date`) }}</th>
-            <td class="border border-slate-500 px-3 py-1">{{ dayjs(info.date).format("MM-DD") }}</td>
+            <td class="border border-slate-500 px-3 py-1">
+              {{ dayjs(info.date).format("MM-DD") }}
+            </td>
           </tr>
           <tr>
             <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.name`) }}</th>
@@ -68,11 +70,13 @@ const stagesActive = ref(false)
               class="mx-2 my-1 bg-th07 hover:bg-th07/75 active:bg-th07/50"
               v-if="
                 info.type === CONSTANTS.REPLAY_TYPE.FULL_GAME &&
-                ![CONSTANTS.DIFFICULTY.EXTRA, CONSTANTS.DIFFICULTY.PHANTASM].includes(info.difficulty)
+                ![CONSTANTS.DIFFICULTY.EXTRA, CONSTANTS.DIFFICULTY.PHANTASM].includes(
+                  info.difficulty
+                )
               "
               @click="stagesActive = !stagesActive"
             >
-              <span>Stages <span class="pi pi-caret-right"></span></span>
+              <span>{{ $t(`table.labels.stages`) }} <span class="pi pi-caret-right"></span></span>
             </Button>
           </tr>
         </tbody>
@@ -86,7 +90,7 @@ const stagesActive = ref(false)
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th07 text-slate-100 px-3 py-1" colspan="100%">
-              {{ filename }} - Stages
+              {{ filename }} - {{ $t(`table.labels.stages`) }}
             </th>
           </tr>
         </thead>
@@ -104,7 +108,9 @@ const stagesActive = ref(false)
             <th class="border border-slate-500 px-3 py-1">Cherry max</th>
           </tr>
           <tr v-for="stage in info.stages" :key="stage.stage">
-            <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.stage_number`, { stage: stage.stage }) }}</th>
+            <th class="border border-slate-500 px-3 py-1">
+              {{ $t(`table.labels.stage_number`, { stage: stage.stage }) }}
+            </th>
             <td class="border border-slate-500 px-3 py-1">{{ $n(stage.score) }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.lives }}</td>
             <td class="border border-slate-500 px-3 py-1">{{ stage.bombs }}</td>
@@ -120,7 +126,7 @@ const stagesActive = ref(false)
               class="mx-2 my-1 bg-th07 hover:bg-th07/75 active:bg-th07/50"
               @click="stagesActive = false"
             >
-              <span><span class="pi pi-caret-left"></span> Back</span>
+              <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>
             </Button>
           </tr>
         </tbody>
