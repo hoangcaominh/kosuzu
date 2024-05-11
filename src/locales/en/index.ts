@@ -2,6 +2,15 @@ import th08Spells from "./th08/spells"
 
 export default {
   messages: {
+    about: {
+      body1: `
+        This website is called Kosuzu, a replay summary analysis online service.
+        And Kosuzu is a cute character from {touhou_project}.
+      `,
+      body2: `Supported games: {supported_games}`,
+      wiki_url: "https://en.wikipedia.org/wiki/Touhou_Project",
+      touhou_project: "Touhou Project"
+    },
     table: {
       labels: {
         game: "Game",
