@@ -90,7 +90,7 @@ function formatSeasonPower(seasonPower: number): string {
               "
               @click="stagesActive = !stagesActive"
             >
-              <span>Stages <span class="pi pi-caret-right"></span></span>
+              <span>{{ $t(`table.labels.stages`) }} <span class="pi pi-caret-right"></span></span>
             </Button>
           </tr>
         </tbody>
@@ -104,7 +104,7 @@ function formatSeasonPower(seasonPower: number): string {
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th16 text-slate-100 px-3 py-1" colspan="100%">
-              {{ filename }} - Stages
+              {{ filename }} - {{ $t(`table.labels.stages`) }} 
             </th>
           </tr>
         </thead>
@@ -142,7 +142,7 @@ function formatSeasonPower(seasonPower: number): string {
               class="mx-2 my-1 bg-th16 hover:bg-th16/75 active:bg-th16/50"
               @click="stagesActive = false"
             >
-              <span><span class="pi pi-caret-left"></span> Back</span>
+              <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>
             </Button>
           </tr>
         </tbody>

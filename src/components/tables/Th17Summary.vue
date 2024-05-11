@@ -79,7 +79,7 @@ const stagesActive = ref(false)
               "
               @click="stagesActive = !stagesActive"
             >
-              <span>Stages <span class="pi pi-caret-right"></span></span>
+              <span>{{ $t(`table.labels.stages`) }} <span class="pi pi-caret-right"></span></span>
             </Button>
           </tr>
         </tbody>
@@ -93,7 +93,7 @@ const stagesActive = ref(false)
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th17 text-slate-100 px-3 py-1" colspan="100%">
-              {{ filename }} - Stages
+              {{ filename }} - {{ $t(`table.labels.stages`) }} 
             </th>
           </tr>
         </thead>
@@ -129,7 +129,7 @@ const stagesActive = ref(false)
               class="mx-2 my-1 bg-th17 hover:bg-th17/75 active:bg-th17/50"
               @click="stagesActive = false"
             >
-              <span><span class="pi pi-caret-left"></span> Back</span>
+              <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>
             </Button>
           </tr>
         </tbody>

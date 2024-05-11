@@ -24,6 +24,7 @@ export default {
         type: "Replay type",
         spell_card: "Spell card",
         stages: "Stages",
+        back: "Back",
         stage_number: ({ named, linked }: any) => {
           if (named("stage") === -1) return "Start"
           return `Stage ${linked(

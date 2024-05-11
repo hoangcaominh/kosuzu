@@ -79,7 +79,7 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
               "
               @click="stagesActive = !stagesActive"
             >
-              <span>Stages <span class="pi pi-caret-right"></span></span>
+              <span>{{ $t(`table.labels.stages`) }} <span class="pi pi-caret-right"></span></span>
             </Button>
           </tr>
         </tbody>
@@ -93,7 +93,7 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th13 text-slate-100 px-3 py-1" colspan="100%">
-              {{ filename }} - Stages
+              {{ filename }} - {{ $t(`table.labels.stages`) }} 
             </th>
           </tr>
         </thead>
@@ -139,7 +139,7 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
               class="mx-2 my-1 bg-th13 hover:bg-th13/75 active:bg-th13/50"
               @click="stagesActive = false"
             >
-              <span><span class="pi pi-caret-left"></span> Back</span>
+              <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>
             </Button>
           </tr>
         </tbody>
