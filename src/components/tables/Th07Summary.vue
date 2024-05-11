@@ -90,7 +90,7 @@ const stagesActive = ref(false)
         <thead>
           <tr>
             <th class="border border-slate-500 bg-th07 text-slate-100 px-3 py-1" colspan="100%">
-              {{ filename }} - {{ $t(`table.labels.stages`) }} 
+              {{ filename }} - {{ $t(`table.labels.stages`) }}
             </th>
           </tr>
         </thead>
