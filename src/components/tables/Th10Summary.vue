@@ -72,7 +72,7 @@ const stagesActive = ref(false)
           </tr>
           <tr>
             <Button
-              class="mx-2 my-1 bg-th10 hover:bg-th10/75 active:bg-th10/50"
+              class="mx-2 my-1 bg-th10 hover:bg-th10/75 active:bg-th10/50 border-transparent"
               v-if="
                 info.type === CONSTANTS.REPLAY_TYPE.FULL_GAME &&
                 info.difficulty !== CONSTANTS.DIFFICULTY.EXTRA
@@ -118,7 +118,7 @@ const stagesActive = ref(false)
           </tr>
           <tr>
             <Button
-              class="mx-2 my-1 bg-th10 hover:bg-th10/75 active:bg-th10/50"
+              class="mx-2 my-1 bg-th10 hover:bg-th10/75 active:bg-th10/50 border-transparent"
               @click="stagesActive = false"
             >
               <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>

@@ -12,7 +12,7 @@ app.use(createPinia())
 app.use(router)
 
 // PrimeVue stuffs
-import "primevue/resources/themes/mdc-light-indigo/theme.css"
+import "primevue/resources/themes/aura-light-amber/theme.css"
 import "primeicons/primeicons.css"
 
 import PrimeVue from "primevue/config"

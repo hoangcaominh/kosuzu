@@ -83,7 +83,7 @@ function formatSeasonPower(seasonPower: number): string {
           </tr>
           <tr>
             <Button
-              class="mx-2 my-1 bg-th16 hover:bg-th16/75 active:bg-th16/50"
+              class="mx-2 my-1 bg-th16 hover:bg-th16/75 active:bg-th16/50 border-transparent"
               v-if="
                 info.type === CONSTANTS.REPLAY_TYPE.FULL_GAME &&
                 info.difficulty !== CONSTANTS.DIFFICULTY.EXTRA
@@ -139,7 +139,7 @@ function formatSeasonPower(seasonPower: number): string {
           </tr>
           <tr>
             <Button
-              class="mx-2 my-1 bg-th16 hover:bg-th16/75 active:bg-th16/50"
+              class="mx-2 my-1 bg-th16 hover:bg-th16/75 active:bg-th16/50 border-transparent"
               @click="stagesActive = false"
             >
               <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>

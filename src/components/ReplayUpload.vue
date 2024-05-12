@@ -25,7 +25,7 @@ const replayUploader = (event: FileUploadUploaderEvent) => {
     @uploader="replayUploader($event)"
   >
     <template #empty>
-      <p>Drag and drop replay files here to upload.</p>
+      <p class="py-2">Drag and drop replay files here to upload.</p>
     </template>
     <template #content="{ files, removeFileCallback }">
       <div v-if="files.length > 0">

@@ -14,7 +14,7 @@ const langs = reactive({
   <div class="container flex justify-center">
     <div v-for="(icon, lang) in langs" :key="lang" class="mx-3">
       <div
-        class="rounded-md bg-gradient-to-br hover:from-neutral-50 hover:to-neutral-200 active:from-red-400 active:to-red-600"
+        class="rounded-md bg-gradient-to-br hover:from-neutral-100 hover:to-neutral-300 active:from-red-400 active:to-red-700"
         @click="setLocale(lang)"
       >
         <img class="p-1 active:scale-90" :src="icon" :alt="lang" />

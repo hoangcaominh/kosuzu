@@ -72,7 +72,7 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
           </tr>
           <tr>
             <Button
-              class="mx-2 my-1 bg-th13 hover:bg-th13/75 active:bg-th13/50"
+              class="mx-2 my-1 bg-th13 hover:bg-th13/75 active:bg-th13/50 border-transparent"
               v-if="
                 info.type === CONSTANTS.REPLAY_TYPE.FULL_GAME &&
                 info.difficulty !== CONSTANTS.DIFFICULTY.EXTRA
@@ -136,7 +136,7 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
           </tr>
           <tr>
             <Button
-              class="mx-2 my-1 bg-th13 hover:bg-th13/75 active:bg-th13/50"
+              class="mx-2 my-1 bg-th13 hover:bg-th13/75 active:bg-th13/50 border-transparent"
               @click="stagesActive = false"
             >
               <span><span class="pi pi-caret-left"></span> {{ $t(`table.labels.back`) }} </span>
