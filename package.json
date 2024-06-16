@@ -1,6 +1,7 @@
 {
   "name": "kosuzu",
   "version": "0.0.0",
+  "homepage": "https://hoangcaominh.github.io/kosuzu",
   "private": true,
   "scripts": {
     "dev": "vite --host",
