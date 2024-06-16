@@ -4,7 +4,7 @@ import HomeView from "@/views/HomeView.vue"
 import AboutView from "@/views/AboutView.vue"
 
 const router = createRouter({
-  history: createWebHistory("https://hoangcaominh.github.io/kosuzu"),
+  history: createWebHistory("/kosuzu/"),
   routes: [
     {
       path: "/",
