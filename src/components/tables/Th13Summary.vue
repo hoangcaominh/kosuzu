@@ -49,11 +49,7 @@ const EXTEND_THRESHOLD = [8, 10, 12, 15, 18, 20, 25]
           <tr>
             <th class="border border-slate-500 px-3 py-1">{{ $t(`table.labels.date`) }}</th>
             <td class="border border-slate-500 px-3 py-1">
-              {{
-                dayjs(info.date.getTime() + info.date.getTimezoneOffset() * 60000).format(
-                  "YYYY-MM-DD HH:mm:ss"
-                )
-              }}
+              {{ dayjs(info.date).format("YYYY-MM-DD HH:mm:ss") }}
             </td>
           </tr>
           <tr>
