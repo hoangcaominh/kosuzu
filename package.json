@@ -20,7 +20,7 @@
     "primevue": "^3.40.1",
     "thrpy-parser": "^0.2.2",
     "vue": "^3.3.4",
-    "vue-i18n": "^9.6.5",
+    "vue-i18n": "^9.14.2",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
