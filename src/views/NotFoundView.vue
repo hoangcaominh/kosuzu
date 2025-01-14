@@ -1,3 +1,3 @@
 <template>
-    <p class="text-4xl">404 Not Found</p>
+  <p class="text-4xl">Not Found</p>
 </template>
